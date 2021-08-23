@@ -62,15 +62,13 @@ public class ProgressEvaluator : MonoBehaviour
 
     private void Pass50Band()
     {
-        string currentDir = System.IO.Directory.GetCurrentDirectory();
-        Debug.Log(currentDir);
-     /*   if (bandReached == GradeBand.Pass50)
+        if (bandReached == GradeBand.Pass50)
         {
             if (!Directory.Exists(".git"))
                 throw new EvalFailedException("No .git folder found. Do you have a Git repository setup at the same folder level as the Assets folder, Library folder, etc.");
-            if (!Directory.Exists(".gitignore"))
-                throw new EvalFailedException("No .git folder found. Do you have a Git repository setup at the same folder level as the Assets folder, Library folder, etc.");
-        }*/
+            if (!File.Exists(".gitignore"))
+                throw new EvalFailedException("No .gitignore found. Do you have a Git repository setup at the same folder level as the Assets folder, Library folder, etc.");
+        }
     }
 
     private void Pass60Band()
